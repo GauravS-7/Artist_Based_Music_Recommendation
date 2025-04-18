@@ -9,7 +9,7 @@ from typing import Tuple, List
 import implicit
 import scipy
 
-from code import load_user_artists, ArtistRetriever
+from main import load_user_artists, ArtistRetriever
 
 
 class ImplicitRecommender:
@@ -53,11 +53,11 @@ class ImplicitRecommender:
 if __name__ == "__main__":
 
     # load user artists matrix
-    user_artists = load_user_artists(Path("../lastfmdata/user_artists.dat"))
+    user_artists = load_user_artists(Path("lastfmdb/user_artists.dat"))
 
     # instantiate artist retriever
     artist_retriever = ArtistRetriever()
-    artist_retriever.load_artists(Path("../lastfmdata/artists.dat"))
+    artist_retriever.load_artists(Path("lastfmdb/artists.dat"))
 
     # instantiate ALS using implicit
     implict_model = implicit.als.AlternatingLeastSquares(
