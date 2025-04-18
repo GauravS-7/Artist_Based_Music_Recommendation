@@ -47,11 +47,11 @@ class ArtistRetriever:
 
 if __name__ == "__main__":
     user_artists_matrix = load_user_artists(
-        Path("lastfmdb/user_artists.dat")
+        Path("Lastfmdb/user_artists.dat")
     )
     print(user_artists_matrix)
 
     artist_retriever = ArtistRetriever()
-    artist_retriever.load_artists(Path("lastfmdb/artists.dat"))
+    artist_retriever.load_artists(Path("Lastfmdb/artists.dat"))
     artist = artist_retriever.get_artist_name_from_id(1)
     print(artist)
